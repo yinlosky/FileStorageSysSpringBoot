@@ -29,5 +29,7 @@ Note:
 3. getAllFilesInfo will read all entries in the database and show to the user
 
 Credits:
-1. Spring Boot Application: http://www.baeldung.com/spring-file-upload
+1. Spring Boot Application:
+    http://www.baeldung.com/spring-file-upload
+    http://javasampleapproach.com/java-integration/upload-multipartfile-spring-boot
 2. H2 database with Spring Boot: https://springframework.guru/spring-boot-web-application-part-3-spring-data-jpa/
