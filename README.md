@@ -24,6 +24,6 @@ Classes:
 
 
 Note:
-1. metadata will be saved in an in-memory DB and I am considering using a unique file ID as the key (the seraching functionn will be supported by the database)
+1. metadata will be saved in an in-memory DB (H2 Database for development) and I am considering using a unique file ID as the key (the seraching functionn will be supported by the database)
 2. downloadFile function should accept a unique ID as parameter for downloading the file
 3. getAllFilesInfo will read all entries in the database and show to the user
