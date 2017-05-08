@@ -33,3 +33,5 @@ Credits:
     http://www.baeldung.com/spring-file-upload
     http://javasampleapproach.com/java-integration/upload-multipartfile-spring-boot
 2. H2 database with Spring Boot: https://springframework.guru/spring-boot-web-application-part-3-spring-data-jpa/
+
+Warning: right now the create a new entry method doesn't check if the input form is empty or not, this needs validation

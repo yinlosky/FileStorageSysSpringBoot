@@ -11,7 +11,7 @@ import javax.annotation.Resource;
  * Created by yhuang9 on 5/6/17.
  */
 @SpringBootApplication
-public class ApplicationMain implements CommandLineRunner {
+public class ApplicationMain implements CommandLineRunner{
     @Resource
     StorageService storageservice;
     public static void main(String[] args){
@@ -24,4 +24,5 @@ public class ApplicationMain implements CommandLineRunner {
         this.storageservice.deleteAll();
         this.storageservice.init();
     }
+
 }

@@ -31,10 +31,13 @@ public class UploadController {
     List<FileEntity> files = new ArrayList<>();
 
     // simply show the page to upload files
+/*
     @GetMapping("/")
     public String listUploadFiles(Model model){
         return "uploadForm";
     }
+
+
 
     // allow users to upload files to the server
     @PostMapping("/")
@@ -56,6 +59,7 @@ public class UploadController {
         return "uploadForm";
     }
 
+
     @GetMapping("/getAllFiles")
     public String getAllFiles(ModelMap modelmap){
         modelmap.addAttribute("files", files);
@@ -71,5 +75,6 @@ public class UploadController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
                 .body(file);
     }
+*/
 
 }

@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by yhuang9 on 5/6/17.
+ *
+ * WebConfiguration is used to look up H2 Database in ~/console/
  */
 @Configuration
 public class WebConfiguration {
