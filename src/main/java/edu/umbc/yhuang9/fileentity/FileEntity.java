@@ -1,9 +1,11 @@
 package edu.umbc.yhuang9.fileentity;
 
 import org.apache.tomcat.jni.File;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by yhuang9 on 5/6/17.
@@ -31,9 +33,12 @@ public class FileEntity {
     private String fileName;
     private String uri;
 
-    public FileEntity(){
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="date")
+    private Date date;
 
-    }
+    public FileEntity(){}
 
     public FileEntity(String n, String e, String f, String u){
         this.name=n;
@@ -41,6 +46,7 @@ public class FileEntity {
         this.fileName=f;
         this.uri = u;
     }
+
 
 
     public Integer getId() {
@@ -89,5 +95,13 @@ public class FileEntity {
 
     public void setUri(String uri) {
         this.uri = uri;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

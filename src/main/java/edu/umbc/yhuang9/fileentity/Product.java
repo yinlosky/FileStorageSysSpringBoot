@@ -1,7 +1,11 @@
 package edu.umbc.yhuang9.fileentity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
+
 
 /**
  * Created by yhuang9 on 5/6/17.
@@ -20,7 +24,16 @@ public class Product {
     private String productId;
     private String description;
     private String imageUrl;
+
+    private String email;
+
     private BigDecimal price;
+
+
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "create_date")
+    private Date date;
 
     public Integer getId() {
         return id;
@@ -68,5 +81,21 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date createDate) {
+        this.date = createDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

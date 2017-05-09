@@ -5,6 +5,8 @@ import edu.umbc.yhuang9.repositories.FileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * Created by yhuang9 on 5/8/17.
  */
@@ -32,6 +34,16 @@ public class FileServiceImpl implements FileService{
     public FileEntity saveFile(FileEntity fileentity) {
         return fileRepository.save(fileentity);
     }
+
+    public Iterable<FileEntity> findByEmail(String email){
+        return fileRepository.findByEmail(email);
+    }
+
+
+    public Iterable<FileEntity> findByDateBetween(Date bDate, Date eDate){
+        return fileRepository.findByDateBetween(bDate, eDate);
+    }
+
 
 
 }

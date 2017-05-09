@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Created by yhuang9 on 5/8/17.
@@ -36,6 +37,8 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         shirt.setPrice(new BigDecimal("18.95"));
         shirt.setImageUrl("https://springframework.guru/wp-content/uploads/2015/04/spring_framework_guru_shirt-rf412049699c14ba5b68bb1c09182bfa2_8nax2_512.jpg");
         shirt.setProductId("235268845711068308");
+        shirt.setDate(new Date());
+        shirt.setEmail("yhuang9@umbc.edu");
         productRepository.save(shirt);
 
         log.info("Saved Shirt - id: " + shirt.getId());
@@ -44,7 +47,10 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         mug.setDescription("Spring Framework Guru Mug");
         mug.setImageUrl("https://springframework.guru/wp-content/uploads/2015/04/spring_framework_guru_coffee_mug-r11e7694903c348e1a667dfd2f1474d95_x7j54_8byvr_512.jpg");
         mug.setProductId("168639393495335947");
+        mug.setDate(new Date());
+        mug.setEmail("dorsa@umbc.edu");
         productRepository.save(mug);
+
 
         log.info("Saved Mug - id:" + mug.getId());
     }

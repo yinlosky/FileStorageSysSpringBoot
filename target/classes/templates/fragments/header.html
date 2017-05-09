@@ -9,14 +9,14 @@
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
-    <link href="../../static/css/guru.css"
+    <link href="../../static/css/yin.css"
           th:href="@{css/yin.css}" rel="stylesheet" media="screen"/>
 </head>
 <body>
 <div class="jumbotron">
 
 </div>
-<div class="container">
+<div class="container col-sm-9">
     <div th:fragment="header">
         <div class="row text-center">
             <div class="">
@@ -31,6 +31,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#" th:href="@{/files}">Files</a></li>
                         <li><a href="#" th:href="@{/new}">Upload a file</a></li>
+                        <li><a href="#" th:href="@{/search}">Search</a></li>
                     </ul>
 
                 </div>

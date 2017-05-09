@@ -32,4 +32,7 @@ public class ProductServiceImpl implements ProductService {
     public Product saveProduct(Product product) {
         return productRepository.save(product);
     }
+    public Iterable<Product> findByEmail(String email){
+        return productRepository.findByEmail(email);
+    }
 }
