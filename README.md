@@ -4,6 +4,11 @@ Author: Yin Huang
 Date: May 5, 2017
 
 # This project implements a file storage system using Spring Boot + Thymeleaf
+
+To enable the email function, you need speicfy your gmail account and password in application.properties file. 
+Run the project, and go to localhost:8080 you will see the web app.
+
+
 1. Upload A File: allows the user to upload multiple files to the server.
   (metadata will be saved in an in-memory DB while the files saved on the local system )
 
@@ -14,6 +19,7 @@ Date: May 5, 2017
 For example: 1.User Email 2. Poll scheduler to specify last integer hours
 
 4. After searching retunrs results, there is a email button to send the result to your email
+
 Warning: to enable email function, we use gmail stmp to set up the server, you need to change application.properties file 
 username and password according to your account.
 

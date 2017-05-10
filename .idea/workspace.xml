@@ -4,29 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/test/java/edu/umbc/yhuang9/ApplicationMainTest.java" line="18" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35e27bd3-2e2b-4682-9597-80a6844f4620" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_1_4_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/umbc/yhuang9/fileentity/MailObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/umbc/yhuang9/services/EmailService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/umbc/yhuang9/services/EmailServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/emailTemplate.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload-dir/Scan39_2.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/umbc/yhuang9/ApplicationMain.class" afterPath="$PROJECT_DIR$/target/classes/edu/umbc/yhuang9/ApplicationMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/umbc/yhuang9/controller/FileController.class" afterPath="$PROJECT_DIR$/target/classes/edu/umbc/yhuang9/controller/FileController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FileStorageSysSpringBoot.iml" afterPath="$PROJECT_DIR$/.idea/FileStorageSysSpringBoot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/umbc/yhuang9/ApplicationMain.java" afterPath="$PROJECT_DIR$/src/main/java/edu/umbc/yhuang9/ApplicationMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/umbc/yhuang9/controller/FileController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/umbc/yhuang9/controller/FileController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/fileform.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/fileform.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/searchpage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/searchpage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/searchpage.html" afterPath="$PROJECT_DIR$/target/classes/templates/searchpage.html" />
-    </list>
+    <list default="true" id="35e27bd3-2e2b-4682-9597-80a6844f4620" name="Default" comment="" />
     <ignored path="FileStorageSysSpringBoot.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
