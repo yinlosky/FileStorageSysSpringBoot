@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Send Email</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div>
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <table cellspacing="10" width="600"  method="post" enctype="multipart/form-data" action="/email">
+        <tr>
+            <th><label>To:      </label></th>
+            <td><input type="email" name="to"/>
+                <small>Enter email address</small><br/>
+                <errors path="to" cssStyle="color:red;font-size:small"/>
+            </td>
+        </tr>
+        <tr>
+            <th><label>Subject:      </label></th>
+            <td><input name="subject"/>
+                <small>Enter the subject</small><br/>
+                <errors path="to" cssStyle="color:red;font-size:small"/>
+            </td>
+        </tr>
+        <tr>
+            <th><label >Message:     </label></th>
+            <td><input name="message"/>
+                <small>Enter extra message</small><br/>
+                <div th:if="${not #lists.isEmpty(files)}">
+                    <table class="table table-striped col-sm-7">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Owner</th>
+                            <th>Email</th>
+                            <th>CreatedAt</th>
+                            <th>Download</th>
+                        </tr>
+                        <tr th:each="file : ${files}">
+                            <td th:text="${file.id}"><a href="/file/${file.id}">Id</a></td>
+                            <td th:text="${file.fileName}">Name</td>
+                            <td th:text="${file.name}">Owner</td>
+                            <td th:text="${file.email}">Email</td>
+                            <td th:text="${file.date}">CreationTime</td>
+                            <td><a th:href="${file.uri}" th:text="${file.uri}" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <errors path="text" cssStyle="color:red;font-size:small"/>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="Send"/>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

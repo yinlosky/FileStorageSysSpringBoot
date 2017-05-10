@@ -1,13 +1,16 @@
 package edu.umbc.yhuang9.controller;
 
 import edu.umbc.yhuang9.fileentity.FileEntity;
+import edu.umbc.yhuang9.fileentity.MailObject;
 import edu.umbc.yhuang9.fileentity.Product;
+import edu.umbc.yhuang9.services.EmailServiceImpl;
 import edu.umbc.yhuang9.services.FileServiceImpl;
 import edu.umbc.yhuang9.storageservice.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.thymeleaf.expression.Lists;
 
+import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,10 +31,13 @@ import java.util.List;
  */
 @Controller
 public class FileController {
+
     // below is the database file service implementation.
     private FileServiceImpl fileServiceImpl;
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+    private  Iterable<FileEntity> res = null;
 
     @Autowired
     public void setFileServiceImpl(FileServiceImpl fileServiceImpl){
@@ -44,6 +51,9 @@ public class FileController {
     public void setStorageService(StorageService storageService){
         this.storageService = storageService;
     }
+
+
+
     // when go to /files it will show all files
     @GetMapping("/files")
     public String listAllFiles(Model model){
@@ -63,11 +73,13 @@ public class FileController {
         return "searchpage";
     }
 
+
+
     @PostMapping("/search")
     public String searchResult(@RequestParam("semail") String semail, @RequestParam("date") Integer length, Model model){
         System.out.println("Searching email is: " + semail);
         if(length!=null)System.out.println("Searching date is:" + -length);
-        Iterable<FileEntity> res = null;
+
         if(!semail.isEmpty()) {
             res = fileServiceImpl.findByEmail(semail);
         }
@@ -82,7 +94,7 @@ public class FileController {
             Date now=cal.getTime();
             res = fileServiceImpl.findByDateBetween(before, now);
         }
-        if(!res.iterator().hasNext()) model.addAttribute("flag", true);
+        if(res==null) model.addAttribute("flag", true);
         else model.addAttribute("files", res);
         return "searchpage";
     }
@@ -115,6 +127,8 @@ public class FileController {
         return "fileform";
     }
 
+
+
   // below is used for downloading the file
     @GetMapping("/files/{filename:.+}")
     @ResponseBody
@@ -133,4 +147,44 @@ public class FileController {
         return "redirect:/file/" + fileEntity.getId();
     }
 
+    @Autowired
+    public EmailServiceImpl emailService;
+
+
+    @GetMapping("/email")
+    public String createEmail(Model model){
+        model.addAttribute("files", res);
+        return "emailTemplate";
+    }
+    @PostMapping("/email")
+    public String sendEmail(Model model, @RequestParam("to") String to, @RequestParam("subject") String subject,
+                            @RequestParam("message") String msg){
+        StringBuilder sb = new StringBuilder();
+        sb.append(msg+"\n"+getMessage());
+        try {
+            emailService.sendSimpleMessage(to,
+                    subject,
+                    sb.toString());
+        }
+        catch(Exception e){
+
+        }
+        return "redirect:/";
+    }
+
+
+    public String getMessage() {
+        StringBuilder sb = new StringBuilder();
+        // Id 	Name 	Owner 	Email 	CreatedAt 	Download
+        if(res!=null){
+            sb.append("Id" + "\t"+ "Name" + "\t" + "Owner" + "\t" + "Email" + "\t" + "CreatedAt" + "\t" + "Download"+"\n");
+            int id=1;
+            for(FileEntity f:res){
+                sb.append(id + "\t"+f.getFileName()  + "\t" + f.getName()
+                + "\t" + f.getEmail() + "\t" + f.getDate() + "\t" + f.getUri()+"\n");
+                id++;
+            }
+        }
+        return sb.toString();
+    }
 }

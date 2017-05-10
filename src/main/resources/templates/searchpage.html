@@ -23,13 +23,13 @@
                 <input type='text' name='date'/>
             </div>
         </div>
-        <div class="col-sm-2 control-label">  <input type='submit' /></div>
+        <div class="col-sm-2 control-label">  <input type='submit' value="Search"/></div>
 
     </form>
 
-    <div th:if="${flag}">
-        <h2>Sorry, no results found</h2>
-    </div>
+
+       <span th:if="${flag}"> <h2>Sorry, no results found</h2> </span>
+
 
     <div th:if="${not #lists.isEmpty(files)}">
         <table class="table table-striped">
@@ -53,6 +53,8 @@
                 <td><a th:href="${ '/file/' + file.id}">View</a></td>
             </tr>
         </table>
+
+        <span><a href="#" th:href="@{/email}" class="button">Email</a></span>
 
     </div>
 </div>

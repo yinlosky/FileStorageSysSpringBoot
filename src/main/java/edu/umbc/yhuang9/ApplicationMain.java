@@ -24,7 +24,8 @@ import static java.lang.System.exit;
  * Created by yhuang9 on 5/6/17.
  */
 @SpringBootApplication
-public class ApplicationMain implements CommandLineRunner{
+//public class ApplicationMain implements CommandLineRunner{
+    public class ApplicationMain{
     @Resource
     StorageService storageservice;
 
@@ -39,7 +40,7 @@ public class ApplicationMain implements CommandLineRunner{
     public static void main(String[] args){
         SpringApplication.run(ApplicationMain.class, args);
     }
-
+/*
     @Transactional(readOnly = true)
     @Override
     public void run(String... strings) throws Exception {
@@ -84,6 +85,6 @@ public class ApplicationMain implements CommandLineRunner{
 
         //exit(0);
 
-
     }
+    */
 }
