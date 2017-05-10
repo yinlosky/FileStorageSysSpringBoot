@@ -32,7 +32,6 @@
     </div>
 
     <div th:if="${not #lists.isEmpty(files)}">
-        <h2>File List</h2>
         <table class="table table-striped">
             <tr>
                 <th>Id</th>
@@ -40,6 +39,7 @@
                 <th>Owner</th>
                 <th>Email</th>
                 <th>Download</th>
+                <th>CreatedAt</th>
                 <th>View</th>
 
             </tr>
@@ -49,6 +49,7 @@
                 <td th:text="${file.name}">Owner</td>
                 <td th:text="${file.email}">Email</td>
                 <td><a th:href="${file.uri}" th:text="${file.uri}" /></td>
+                <td th:text="${file.date}">CreatedAt</td>
                 <td><a th:href="${ '/file/' + file.id}">View</a></td>
             </tr>
         </table>

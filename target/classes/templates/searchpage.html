@@ -40,6 +40,7 @@
                 <th>Owner</th>
                 <th>Email</th>
                 <th>Download</th>
+                <th>CreatedAt</th>
                 <th>View</th>
 
             </tr>
@@ -48,6 +49,7 @@
                 <td th:text="${file.fileName}">Name</td>
                 <td th:text="${file.name}">Owner</td>
                 <td th:text="${file.email}">Email</td>
+                <td th:text="${file.date}">CreatedAt</td>
                 <td><a th:href="${file.uri}" th:text="${file.uri}" /></td>
                 <td><a th:href="${ '/file/' + file.id}">View</a></td>
             </tr>

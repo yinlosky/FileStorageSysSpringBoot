@@ -16,6 +16,7 @@
                 <th>Name</th>
                 <th>Owner</th>
                 <th>Email</th>
+                <th>CreatedAt</th>
                 <th>Download</th>
                 <th>View</th>
 
@@ -25,6 +26,7 @@
                 <td th:text="${file.fileName}">Name</td>
                 <td th:text="${file.name}">Owner</td>
                 <td th:text="${file.email}">Email</td>
+                <td th:text="${file.date}">CreationTime</td>
                 <td><a th:href="${file.uri}" th:text="${file.uri}" /></td>
                 <td><a th:href="${ '/file/' + file.id}">View</a></td>
             </tr>
